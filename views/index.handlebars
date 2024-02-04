@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  {{!-- <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script> --}}
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+  <script defer src="socket-client.js"></script>
+
+</head>
+<body>
+  <div id="room-container">
+    {{#each rooms}}
+      <div>{{@key}}</div>
+      <a href="/{{@key}}">Join</a>
+    {{/each}}
+  </div>
+  <form id= "roomSub" action="/room" method="POST">
+    <input id = "roomName" name="room" type="text">
+    <button type="submit">New Room</button>
+  </form>
+
+    <!-- Include Socket.IO client from CDN -->
+
+</body>
+</html>
